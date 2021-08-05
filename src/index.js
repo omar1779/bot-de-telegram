@@ -4,6 +4,7 @@ const app = express()
 dotenv.config()
 require('./database')
 const payments = require('./payments.js').default
+app.use(express.json())
 
 payments(app)
 

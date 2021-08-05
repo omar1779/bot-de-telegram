@@ -1,0 +1,11 @@
+@api = http://localhost:3000
+
+###
+POST  {{api}}/payments
+Content-Type: application/json
+
+{
+    "email": "furriola2703@gmail.com",
+    "amount": "140.00"
+}
+

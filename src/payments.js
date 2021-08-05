@@ -1,11 +1,11 @@
-const StudentSchema = require('./models/student.js')
+const StudentSchema = require('./models/student.js').default
 const { v1 } =  require('id-creator')
-const sendMessage = require('./chat/sendMessage.js')
+const sendMessage = require('./chat/sendMessage.js').default
 const moment = require('moment')
 
 const payments = app => {
     app.post('/payments', async(req, res) => {
-        const {email, amount} = req.body
+        const {email, amount, date} = req.body
         const token = v1(12, true)
         try {
             let endDate
@@ -21,7 +21,7 @@ const payments = app => {
                 endDate = moment().add(365, 'd')
                 break
               default:
-                throw new Error('El plan no es valido')
+                endDate = moment(date)
             }
 
             const {telegram: telegramToken} = await StudentSchema.findOneAndUpdate({ email }, {
