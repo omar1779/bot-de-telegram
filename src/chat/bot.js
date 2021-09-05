@@ -81,17 +81,6 @@ bot.command('manual', async (ctx) => {
 })
 
 // actualizar carpeta
-bot.command('borrar', async (ctx) => {
-  const { id } = ctx.from
-  const { text } = ctx.message
-  if (id + '' === process.env.ADMIN_ID) {
-    const params = text.split(' ', 2)
-    await VideoSchema.findOneAndDelete({ key: params[1] })
-    return bot.telegram.sendMessage(ctx.chat.id, 'Borrado exitosamente')
-  }
-  return bot.telegram.sendMessage(ctx.chat.id, 'Comando no valido')
-})
-
 const teacherID = [4700303, 5031269, 5031278, 4700317, 4700314, 5031533, 5121340, 5121342, 5246218]
 bot.command('actualizar', async (ctx) => {
   const { id } = ctx.from
