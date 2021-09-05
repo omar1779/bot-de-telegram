@@ -162,3 +162,4 @@ bot.command('banear', async (ctx) => {
 })
 
 bot.launch()
+console.log('bot running')
