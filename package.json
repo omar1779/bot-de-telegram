@@ -4,17 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "start": "babel-node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
     "axios": "^0.21.1",
+    "babel-node": "0.0.1-security",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "id-creator": "^1.2.3",
+    "json2xls": "^0.1.2",
     "moment": "^2.29.1",
-    "mongoose": "^5.13.5"
+    "mongodb": "^4.1.1",
+    "mongoose": "^5.13.5",
+    "node-cron": "^3.0.0",
+    "telegraf": "^4.4.1"
   }
 }

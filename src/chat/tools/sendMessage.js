@@ -11,4 +11,4 @@ const sendMessage = async (text, chat_id = process.env.ADMIN_ID) => {
     return e
   }
 }
-exports.default = sendMessage
+export default sendMessage
