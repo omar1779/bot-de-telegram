@@ -4,8 +4,10 @@ dotenv.config()
 
 
 const app = express()
-app.listen(3000, function () {
-    console.log(`http://localhost:${3000}`)
+
+const { PORT } = process.env
+app.listen(PORT, function () {
+    console.log(`http://localhost:${PORT}`)
   })
 require('./database')
 require('./tasks/deleteUser.js')
