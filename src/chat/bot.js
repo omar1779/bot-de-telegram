@@ -59,7 +59,6 @@ bot.command('manual', async (ctx) => {
     }
     // buscamos el usuario
     const endDate = moment().add(params[2], 'd')
-    console.log(endDate._d )
     const transacctionID = v1(8, false)
     const description = params[2] > 0 ? 'Acceso manual a la academia de Runnig trader' : 'Bloqueo de acceso a la academia de Runnig trader'
     const result = await StudentSchema.findOneAndUpdate({ userID: params[1] }, {
