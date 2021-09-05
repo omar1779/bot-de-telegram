@@ -25,6 +25,7 @@ export const banUserById = async (userID) => {
 export const deleteUserFromChat = async () => {
       // traemos todos los usarios con fecha de vencimiento entre ayer y hoy
       const yesterday = moment().subtract(2, 'd')
+      
       const mayBeDelete = await StudentSchema.find({
         expirationDate: {
           $gte: new Date(yesterday.toString()),
